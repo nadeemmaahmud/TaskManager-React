@@ -7,18 +7,6 @@ function TaskForm({onAddTask}) {
   const [priority, setPriority] = useState("Medium")
   const [error, setError] = useState("")
 
-  const handleTitle = (e) => {
-    setTitle(e.target.value)
-  }
-
-  const handleCategory = (e) => {
-    setCategory(e.target.value)
-  }
-
-  const handlePriority = (e) => {
-    setPriority(e.target.value)
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -37,6 +25,7 @@ function TaskForm({onAddTask}) {
     }
 
     onAddTask(newtask)
+    
     setTitle("")
     setCategory("Personal")
     setPriority("Medium")
@@ -50,13 +39,13 @@ function TaskForm({onAddTask}) {
       <form onSubmit={handleSubmit} className='space-y-4'>
         <div>
             <label htmlFor='title' className='block mb-1'>Task Title</label>
-            <input id='title' value={title} onChange={handleTitle} type='text' className='w-full px-4 py-2 border border-gray-300 rounded' placeholder='Enter you task title'/> 
+            <input id='title' value={title} onChange={(e) => setTitle(e.target.value)} type='text' className='w-full px-4 py-2 border border-gray-300 rounded' placeholder='Enter you task title'/> 
         </div>
         {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}
 
         <div>
             <label htmlFor='category' className='block mb-1'>Category</label>
-            <select id='category' value={category} onChange={handleCategory} className='w-full px-4 py-2 border border-gray-300 rounded'>
+            <select id='category' value={category} onChange={(e) => setCategory(e.target.value)} className='w-full px-4 py-2 border border-gray-300 rounded'>
                 <option value="Work">Work</option>
                 <option value="Personal">Personal</option>
                 <option value="Study">Study</option>
@@ -66,7 +55,7 @@ function TaskForm({onAddTask}) {
 
         <div>
             <label htmlFor='priority' className='block mb-1'>Priority</label>
-            <select id='priority' value={priority} onChange={handlePriority} className='w-full px-4 py-2 border border-gray-300 rounded'>
+            <select id='priority' value={priority} onChange={(e) => setPriority(e.target.value)} className='w-full px-4 py-2 border border-gray-300 rounded'>
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
