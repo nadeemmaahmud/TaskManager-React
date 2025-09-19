@@ -57,19 +57,19 @@ function TaskForm({onAddTask}) {
         <div>
             <label htmlFor='category' className='block mb-1'>Category</label>
             <select id='category' value={category} onChange={handleCategory} className='w-full px-4 py-2 border border-gray-300 rounded'>
-                <option value="work">Work</option>
-                <option value="personal">Personal</option>
-                <option value="study">Study</option>
-                <option value="other">Other</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Study">Study</option>
+                <option value="Other">Other</option>
             </select>
         </div>
 
         <div>
             <label htmlFor='priority' className='block mb-1'>Priority</label>
             <select id='priority' value={priority} onChange={handlePriority} className='w-full px-4 py-2 border border-gray-300 rounded'>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
             </select>
         </div>
 
