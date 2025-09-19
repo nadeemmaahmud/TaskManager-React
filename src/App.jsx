@@ -42,7 +42,7 @@ function App() {
   }
 
   useEffect(() => {
-    const storeTask = JSON.parse(localStorage.getItem(tasks)) || []
+    const storeTask = JSON.parse(localStorage.getItem('tasks')) || []
     setTask(storeTask)
   }, [])
 
